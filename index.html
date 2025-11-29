@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Tugas Kriptografi 7.6</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>💻 Portal Tugas Kriptografi 7.6</h1>
+      <p>
+        Kumpulkan tugasmu di sini dan pantau status pengumpulan seluruh kelas.
+      </p>
+    </header>
+
+    <main>
+      <!-- CARD UPLOAD -->
+      <section class="card upload-card">
+        <h2>📤 Upload Tugas</h2>
+        <form id="uploadForm">
+          <label for="nama">Nama Mahasiswa</label>
+          <input
+            type="text"
+            id="nama"
+            placeholder="Masukkan nama lengkap"
+            required
+          />
+
+          <label for="nim">NIM</label>
+          <input type="text" id="nim" placeholder="Masukkan NIM" required />
+
+          <label for="file">File Tugas (PDF/DOCX/ZIP)</label>
+          <input type="file" id="file" required />
+
+          <button type="submit">Unggah Tugas</button>
+        </form>
+        <p id="statusMsg"></p>
+      </section>
+
+      <!-- CARD LIST -->
+      <section class="card list-card">
+        <h2>📚 Daftar Tugas Terkumpul</h2>
+        <table id="taskTable">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>NIM</th>
+              <th>File</th>
+              <th>Tanggal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4" style="text-align: center">
+                Belum ada tugas terkumpul.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Portal Tugas Kriptografi 7.6 — Dirancang oleh Rian Agusta</p>
+    </footer>
+
+    <script>
+      // Animasi tombol upload
+      const form = document.getElementById("uploadForm");
+      const statusMsg = document.getElementById("statusMsg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        statusMsg.textContent = "🚀 Mengunggah tugas... (simulasi)";
+        setTimeout(() => {
+          statusMsg.textContent =
+            "✅ Tugas berhasil diunggah! (tahap Firebase nanti)";
+          form.reset();
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
